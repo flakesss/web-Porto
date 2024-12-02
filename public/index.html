@@ -30,7 +30,8 @@
     <!-- Bagian Home -->
     <section class="home" id="home">
         <div class="home-content">
-            <img src="assets/1000090901 (1).jpg" class="img-home" alt="Hatta Image">
+            <!-- Tambahkan atribut onclick pada gambar -->
+            <img src="assets/1000090901 (1).jpg" class="img-home" alt="Hatta Image" onclick="openFullImage()">
             <h1>Halo Semua!! 🙋</h1>
             <h2>Saya Hatta Dwi Putranto</h2>
         </div>
@@ -68,19 +69,31 @@
     <section id="projects" class="projects-container">
         <h2>Projek Saya</h2>
         <div class="projects-content">
+            <!-- Proyek 1: Website Portofolio -->
             <div class="project-item">
                 <i class="fas fa-laptop-code project-icon"></i>
                 <h3>Website Portofolio</h3>
                 <p>Website portofolio saya yang dibuat dengan HTML, CSS, dan JavaScript. Situs ini menampilkan proyek-proyek saya, keahlian, dan cara untuk menghubungi saya.</p>
                 <a href="https://github.com/flakesss/web-Porto" target="_blank" class="btn">Lihat Projek</a>
+                <!-- Tambahkan tombol Demo -->
+                <a href="https://your-portfolio-website-url.com" target="_blank" class="btn">Demo</a>
             </div>
+            <!-- Proyek 2: Face Recognition -->
             <div class="project-item">
                 <i class="fas fa-user-friends project-icon"></i>
                 <h3>Face Recognition</h3>
                 <p>Projek machine learning untuk mengenali wajah menggunakan Python dan OpenCV. Projek ini mencakup pengumpulan data, pelatihan model, dan implementasi deteksi wajah secara real-time.</p>
                 <a href="https://github.com/flakesss/face_Recognition" target="_blank" class="btn">Lihat Projek</a>
             </div>
-            <!-- Tambahkan projek lain jika diperlukan -->
+            <!-- Proyek 3: Maternal Health Risk -->
+            <div class="project-item">
+                <i class="fas fa-heartbeat project-icon"></i>
+                <h3>Maternal Health Risk</h3>
+                <p>Website yang menggunakan machine learning untuk menentukan level risiko kehamilan seseorang. Projek ini mencakup model prediksi dan antarmuka pengguna yang mudah digunakan.</p>
+                <a href="https://github.com/flakesss/maternal_health_risk" target="_blank" class="btn">Lihat Projek</a>
+                <!-- Tambahkan tombol Demo jika ada -->
+                <a href="https://your-maternal-health-risk-website-url.com" target="_blank" class="btn">Demo</a>
+            </div>
         </div>
     </section>
     
@@ -101,7 +114,7 @@
         <p>&copy; 2023 Hatta Dwi Putranto. All rights reserved.</p>
     </footer>
     
-    <!-- JavaScript untuk menu responsif -->
+    <!-- JavaScript untuk menu responsif dan fitur tambahan -->
     <script src="script.js"></script>
 </body>
 </html>
