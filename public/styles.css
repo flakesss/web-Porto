@@ -254,6 +254,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 5px; /* Tambahkan margin agar tombol tidak menempel */
 }
 
 .project-item .btn:hover {
@@ -342,6 +343,27 @@ body {
 .footer p {
     color: #eaeaea;
     font-size: 0.9rem;
+}
+
+/* CSS untuk overlay gambar full */
+#image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image-overlay .full-image {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #00adb5;
+    border-radius: 15px;
 }
 
 /* Media Queries */
