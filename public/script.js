@@ -11,6 +11,14 @@ if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
     });
+
+    // Menutup menu saat link diklik (untuk pengguna mobile)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
 } else {
     console.error("Element dengan kelas '.hamburger' atau '.nav-menu' tidak ditemukan.");
 }
