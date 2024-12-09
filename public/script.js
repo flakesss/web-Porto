@@ -45,3 +45,13 @@ function openFullImage() {
     // Tambahkan overlay ke body
     document.body.appendChild(overlay);
 }
+
+// Mengubah warna navbar saat menggulir
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar-container');
+    if (window.scrollY > 50) { // Jika pengguna menggulir lebih dari 50px
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
