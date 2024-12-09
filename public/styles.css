@@ -1,4 +1,33 @@
-/* Reset CSS */
+/* Color Variables */
+:root {
+    /* Light Mode */
+    --primary-color: #00adb5;
+    --secondary-color: #1b1b1b;
+    --background-color: #ffffff;
+    --text-color: #1b1b1b;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --navbar-bg-scrolled: rgba(255, 255, 255, 0.95);
+    --card-bg: #f0f0f0;
+    --btn-bg: #00adb5;
+    --btn-text: #ffffff;
+    --indicator-bg: rgba(0, 173, 181, 0.2);
+}
+
+body.dark-mode {
+    /* Dark Mode */
+    --primary-color: #00adb5;
+    --secondary-color: #eaeaea;
+    --background-color: #1b1b1b;
+    --text-color: #eaeaea;
+    --navbar-bg: rgba(37, 37, 37, 0.8);
+    --navbar-bg-scrolled: rgba(37, 37, 37, 0.95);
+    --card-bg: #222831;
+    --btn-bg: #00adb5;
+    --btn-text: #1b1b1b;
+    --indicator-bg: rgba(0, 173, 181, 0.3);
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,25 +40,28 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1b1b1b;
-    color: #eaeaea;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Navbar */
 .navbar-container {
     width: 100%;
-    background-color: rgba(37, 37, 37, 0.8); /* Transparan dengan opacity 0.8 */
+    background-color: var(--navbar-bg);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    backdrop-filter: blur(10px); /* Efek blur */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .navbar-container.scrolled {
-    background-color: rgba(37, 37, 37, 0.95); /* Lebih solid saat menggulir */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan */
+    background-color: var(--navbar-bg-scrolled);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -43,7 +75,7 @@ body {
 }
 
 .logo-text {
-    color: #eaeaea;
+    color: var(--secondary-color);
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -51,107 +83,215 @@ body {
 }
 
 .logo-text:hover {
-    color: #00adb5;
+    color: var(--primary-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
+    margin-right: 20px;
 }
 
 .nav-link {
-    margin: 0 15px;
-    color: #eaeaea;
+    margin: 0 10px;
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #00adb5;
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--indicator-bg);
+    color: var(--primary-color);
+}
+
+/* Toggle Switch */
+.toggle-container {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.theme-toggle {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background: var(--card-bg);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--text-color) !important;
+    pointer-events: none;
+}
+
+.sun-icon {
+    left: 8px;
+}
+
+.moon-icon {
+    right: 8px;
+    opacity: 0;
+}
+
+.toggle-ball {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.theme-toggle:checked + .toggle-label {
+    background: var(--card-bg);
+}
+
+.theme-toggle:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+}
+
+.theme-toggle:checked + .toggle-label .sun-icon {
+    opacity: 0;
+}
+
+.theme-toggle:checked + .toggle-label .moon-icon {
+    opacity: 1;
 }
 
 .hamburger {
     display: none;
     font-size: 1.5rem;
-    color: #eaeaea;
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
-/* Bagian Home */
-.home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px; /* Menyesuaikan dengan tinggi navbar */
+/* Hero Section */
+.hero-section {
+    padding-top: 120px;
     min-height: 100vh;
-    background-color: #393e46;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 15px;
+    margin: 20px;
 }
 
-.home-content {
-    max-width: 800px;
-    margin: 0 auto;
+.hero-inner {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
 }
 
-.img-home {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Mengubah menjadi lingkaran */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    border: 5px solid var(--primary-color);
     transition: transform 0.3s ease;
-    border: 5px solid #00adb5; /* Menambahkan border */
     cursor: pointer;
 }
 
-.img-home:hover {
+/* Black border in light mode */
+body:not(.dark-mode) .hero-img {
+    border-color: black;
+}
+
+.hero-img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 173, 181, 0.5);
 }
 
-.home h1 {
-    font-size: 2.5rem;
-    color: #eaeaea;
+.hero-right {
+    flex: 1;
+    color: var(--text-color);
 }
 
-.home h2 {
-    font-size: 2rem;
-    color: #00adb5;
-    margin-top: 10px;
+.hero-right h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
 }
 
-/* Bagian Tentang Saya */
-.about-container {
-    padding: 60px 20px;
-    background-color: #222831;
-    text-align: center;
+.hero-right h1 .highlight {
+    color: var(--primary-color);
 }
 
-.about-container h2 {
-    font-size: 2.5rem;
-    color: #00adb5;
+.hero-right h2 {
+    font-size: 1.8rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.about-container p {
-    font-size: 1.2rem;
-    color: #eaeaea;
-    max-width: 800px;
-    margin: 0 auto;
+.hero-right p {
+    font-size: 1.1rem;
     line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
-/* Bagian Keahlian */
+.typing-cursor {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.3s;
+    color: var(--text-color);
+}
+
+.typing-cursor.active {
+    opacity: 0;
+}
+
+/* Skills Section */
 .skills-container {
     padding: 60px 20px;
-    background-color: #393e46;
     text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    margin: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .skills-container h2 {
     font-size: 2.5rem;
-    color: #00adb5;
+    color: var(--primary-color);
     margin-bottom: 40px;
 }
 
@@ -163,12 +303,12 @@ body {
 }
 
 .skill-item {
-    background-color: #222831;
-    color: #eaeaea;
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 30px 20px;
     width: 250px;
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,14 +323,14 @@ body {
 
 .skill-item i {
     font-size: 2.5rem;
-    color: #00adb5;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
 .skill-item h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #00adb5;
+    color: var(--primary-color);
 }
 
 .skill-item p {
@@ -198,16 +338,18 @@ body {
     line-height: 1.6;
 }
 
-/* Bagian Projek */
+/* Projects Section */
 .projects-container {
     padding: 60px 20px;
-    background-color: #222831;
+    background-color: var(--card-bg);
     text-align: center;
+    border-radius: 15px;
+    margin: 20px;
 }
 
 .projects-container h2 {
     font-size: 2.5rem;
-    color: #00adb5;
+    color: var(--primary-color);
     margin-bottom: 40px;
 }
 
@@ -219,8 +361,8 @@ body {
 }
 
 .project-item {
-    background-color: #1b1b1b;
-    color: #eaeaea;
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 30px 20px;
     width: 350px;
     border-radius: 15px;
@@ -239,14 +381,14 @@ body {
 
 .project-icon {
     font-size: 3rem;
-    color: #00adb5;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .project-item h3 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #00adb5;
+    color: var(--primary-color);
 }
 
 .project-item p {
@@ -260,49 +402,47 @@ body {
     gap: 10px;
 }
 
-.project-buttons .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .github-btn {
     background-color: #24292e;
     color: #ffffff;
+    border: none;
 }
 
 .github-btn:hover {
-    background-color: #00adb5;
-    color: #1b1b1b;
+    background-color: var(--primary-color);
+    color: var(--btn-text);
     box-shadow: 0px 5px 20px rgba(0, 173, 181, 0.3);
 }
 
-.project-buttons .btn i {
-    margin-right: 8px;
-}
-
-/* Bagian Kontak */
+/* Contact Section */
 .contact-container {
     padding: 60px 20px;
-    background-color: #222831;
+    background-color: var(--card-bg);
     text-align: center;
+    border-radius: 15px;
+    margin: 20px;
 }
 
 .contact-container h2 {
     font-size: 2.5rem;
-    color: #00adb5;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .img-contact {
     width: 200px;
     height: 200px;
-    border-radius: 50%; /* Mengubah menjadi lingkaran */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    border: 5px solid #00adb5; /* Menambahkan border */
+    border: 5px solid var(--primary-color);
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Black border for contact image in light mode */
+body:not(.dark-mode) .img-contact {
+    border-color: black;
 }
 
 .img-contact:hover {
@@ -318,9 +458,9 @@ body {
 }
 
 .social-icons a {
-    color: #eaeaea;
+    color: var(--secondary-color);
     font-size: 1.5rem;
-    border: 2px solid #00adb5;
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -331,8 +471,8 @@ body {
 }
 
 .social-icons a:hover {
-    background-color: #00adb5;
-    color: #1b1b1b;
+    background-color: var(--primary-color);
+    color: var(--btn-text);
 }
 
 .btn {
@@ -340,18 +480,18 @@ body {
     align-items: center;
     justify-content: center;
     padding: 12px 25px;
-    background-color: #00adb5;
-    color: #1b1b1b;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     font-weight: bold;
     border-radius: 50px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin: 5px; /* Tambahkan margin agar tombol tidak menempel */
+    margin: 5px;
 }
 
 .btn:hover {
     background-color: #eaeaea;
-    color: #00adb5;
+    color: var(--primary-color);
     box-shadow: 0px 10px 40px rgba(0, 173, 181, 0.3);
 }
 
@@ -360,6 +500,8 @@ body {
     background-color: #252525;
     padding: 20px;
     text-align: center;
+    border-radius: 15px;
+    margin: 20px;
 }
 
 .footer p {
@@ -367,7 +509,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* CSS untuk overlay gambar full */
+/* Full Image Overlay */
 #image-overlay {
     position: fixed;
     top: 0;
@@ -384,26 +526,30 @@ body {
 #image-overlay .full-image {
     max-width: 90%;
     max-height: 90%;
-    border: 5px solid #00adb5;
+    border: 5px solid var(--primary-color);
     border-radius: 15px;
 }
 
-/* Media Queries */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
         top: 80px;
-        left: -100%;
+        right: 0;
         background-color: #252525;
-        width: 100%;
+        width: 250px;
         height: calc(100% - 80px);
         flex-direction: column;
         align-items: center;
-        transition: left 0.3s ease;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+        padding-top: 20px;
     }
 
     .nav-menu.active {
-        left: 0;
+        transform: translateX(0);
     }
 
     .nav-link {
@@ -413,42 +559,34 @@ body {
 
     .hamburger {
         display: block;
+        margin-right: 10px;
     }
 
-    .skills-content,
-    .projects-content {
+    .toggle-container {
+        margin-right: 10px;
+    }
+
+    .hero-inner {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
-    .skill-item,
-    .project-item {
-        width: 80%;
+    .hero-right {
+        text-align: center; /* Ensure symmetry on mobile */
+    }
+
+    .hero-left, .hero-right {
+        width: 100%;
+        flex: unset;
     }
 }
 
 @media (max-width: 480px) {
-    .home h1 {
-        font-size: 2rem;
+    .hero-right h1 {
+        font-size: 2.2rem;
     }
 
-    .home h2 {
+    .hero-right h2 {
         font-size: 1.5rem;
-    }
-
-    .about-container h2,
-    .skills-container h2,
-    .projects-container h2,
-    .contact-container h2 {
-        font-size: 2rem;
-    }
-
-    .skill-item,
-    .project-item {
-        width: 100%;
-    }
-
-    .btn {
-        padding: 10px 20px;
     }
 }
