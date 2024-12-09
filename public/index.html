@@ -1,134 +1,142 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Hatta Dwi Putranto</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome untuk ikon sosial media dan ikon proyek -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portfolio - Hatta Dwi Putranto</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <meta name="description" content="Portfolio of Hatta Dwi Putranto - Web Developer, Machine Learning Enthusiast, and Game Developer">
+    <meta name="keywords" content="Hatta Dwi Putranto, Portfolio, Web Development, Machine Learning, Game Development">
 </head>
 <body>
-    <!-- Navbar -->
+ 
     <header class="navbar-container">
         <nav class="navbar">
-            <!-- Mengganti logo dengan nama sebagai teks -->
-            <a href="#" class="logo-text">Hatta Dwi Putranto</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">Tentang Saya</a></li>
-                <li><a href="#skills" class="nav-link">Keahlian</a></li>
-                <li><a href="#projects" class="nav-link">Projek</a></li>
-                <li><a href="#contact" class="nav-link">Kontak</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <a href="#hero" class="logo-text">Hatta Dwi Putranto</a>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="toggle-container">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                    <label for="theme-toggle" class="toggle-label">
+                        <span class="toggle-icon sun-icon"><i class="fas fa-sun"></i></span>
+                        <span class="toggle-icon moon-icon"><i class="fas fa-moon"></i></span>
+                        <span class="toggle-ball"></span>
+                    </label>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
     
-    <!-- Bagian Home -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <!-- Tambahkan atribut onclick pada gambar -->
-            <img src="assets/1000090901 (1).jpg" class="img-home" alt="Hatta Image" onclick="openFullImage()">
-            <h1>Halo Semua!! 🙋</h1>
-            <h2>Saya Hatta Dwi Putranto</h2>
+    <section id="hero" class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <img src="assets/1000090901 (1).jpg" alt="Profile Image" class="hero-img" onclick="openFullImage()">
+            </div>
+            <div class="hero-right">
+                <h1>Hello, I am <span class="highlight">Hatta Dwi Putranto</span></h1>
+                <h2><span id="typing-text"></span><span class="typing-cursor">|</span></h2>
+                <p>I am an undergraduate student in Telecommunication Engineering at Telkom University. I am passionate about building interactive digital products, leveraging machine learning for intelligent solutions, and developing enjoyable games. Let's collaborate to create something extraordinary!</p>
+            </div>
         </div>
     </section>
-    
-    <!-- Bagian Tentang Saya -->
-    <section id="about" class="about-container">
-        <h2>Tentang Saya</h2>
-        <p>Hai, saya Hatta! Saya seorang pemula yang antusias di bidang web development, machine learning, dan game development. Saat ini, saya sedang menempuh pendidikan di Telkom University, jurusan S1 Teknik Telekomunikasi. Saya selalu bersemangat untuk belajar hal-hal baru dan mengembangkan keterampilan saya.</p>
-    </section>
-    
-    <!-- Bagian Keahlian -->
+
+    <!-- Skills Section -->
     <section id="skills" class="skills-container">
-        <h2>Keahlian</h2>
+        <h2>Skills</h2>
         <div class="skills-content">
             <div class="skill-item">
                 <i class="fas fa-code"></i>
                 <h3>Web Development</h3>
-                <p>Belajar HTML, CSS, dan JavaScript untuk membangun website interaktif.</p>
+                <p>Proficient in HTML, CSS, JavaScript, and modern frameworks for building responsive websites.</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-robot"></i>
                 <h3>Machine Learning</h3>
-                <p>Memahami dasar-dasar algoritma dan model machine learning.</p>
+                <p>Understanding of supervised and unsupervised learning, as well as frameworks like TensorFlow.</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-gamepad"></i>
                 <h3>Game Development</h3>
-                <p>Eksplorasi pembuatan game menggunakan berbagai engine dan platform.</p>
+                <p>Experience creating simple games using Unity/Godot with a focus on enjoyable gameplay.</p>
             </div>
         </div>
     </section>
     
-    <!-- Bagian Projek -->
+    <!-- Projects Section -->
     <section id="projects" class="projects-container">
-        <h2>Projek Saya</h2>
+        <h2>My Projects</h2>
         <div class="projects-content">
-            <!-- Proyek 1: Website Portofolio -->
+            <!-- Project 1: Portfolio Website -->
             <div class="project-item">
                 <i class="fas fa-laptop-code project-icon"></i>
-                <h3>Website Portofolio</h3>
-                <p>Website portofolio saya yang dibuat dengan HTML, CSS, dan JavaScript. Situs ini menampilkan proyek-proyek saya, keahlian, dan cara untuk menghubungi saya.</p>
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio showcasing projects, skills, and contact information.</p>
                 <div class="project-buttons">
-                    <a href="https://github.com/flakesss/web-Porto" target="_blank" class="btn github-btn">
+                    <a href="#" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://porto-httadw.vercel.app/" target="_blank" class="btn">Demo</a>
+                    <a href="#" target="_blank" class="btn">Demo</a>
                 </div>
             </div>
-            <!-- Proyek 2: Face Recognition -->
+            <!-- Project 2: Face Recognition -->
             <div class="project-item">
                 <i class="fas fa-user-friends project-icon"></i>
                 <h3>Face Recognition</h3>
-                <p>Projek machine learning untuk mengenali wajah menggunakan Python dan OpenCV. Projek ini mencakup pengumpulan data, pelatihan model, dan implementasi deteksi wajah secara real-time.</p>
+                <p>A real-time face detection project using Python & OpenCV.</p>
                 <div class="project-buttons">
-                    <a href="https://github.com/flakesss/face_Recognition" target="_blank" class="btn github-btn">
+                    <a href="#" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
             </div>
-            <!-- Proyek 3: Maternal Health Risk -->
+            <!-- Project 3: Maternal Health Risk -->
             <div class="project-item">
                 <i class="fas fa-heartbeat project-icon"></i>
                 <h3>Maternal Health Risk</h3>
-                <p>Website yang menggunakan machine learning untuk menentukan level risiko kehamilan seseorang. Projek ini mencakup model prediksi dan antarmuka pengguna yang mudah digunakan.</p>
+                <p>A machine learning-based website for predicting pregnancy risk levels with a user-friendly interface.</p>
                 <div class="project-buttons">
-                    <a href="https://github.com/flakesss/web-MaternalRisk.git" target="_blank" class="btn github-btn">
+                    <a href="#" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://your-maternal-health-risk-website-url.com" target="_blank" class="btn">Demo</a>
+                    <a href="#" target="_blank" class="btn">Demo</a>
                 </div>
             </div>
-            <!-- Proyek 4: K Drama Recommendations -->
+            <!-- Project 4: K-Drama Recommendations -->
             <div class="project-item">
                 <i class="fas fa-tv project-icon"></i>
-                <h3>K Drama Recommendations</h3>
-                <p>Website rekomendasi K Drama yang menggunakan machine learning untuk memilih drama yang sesuai dengan pencarian pengguna dan mengurutkannya berdasarkan rating tertinggi.</p>
+                <h3>K-Drama Recommendations</h3>
+                <p>A recommendation system using machine learning to suggest K-Dramas based on ratings.</p>
                 <div class="project-buttons">
-                    <a href="https://github.com/flakesss/k-drama-recommendations" target="_blank" class="btn github-btn">
+                    <a href="#" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://kdrama-recommendations.vercel.app/" target="_blank" class="btn">Demo</a>
+                    <a href="#" target="_blank" class="btn">Demo</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Bagian Kontak -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-container">
-        <h2>Kontak Saya</h2>
+        <h2>Contact Me</h2>
         <img src="assets/1000090901 (1).jpg" class="img-contact" alt="Contact Image" onclick="openFullImage()">
         <div class="social-icons">
-            <a href="https://www.instagram.com/httadw/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/hatta-dwi-putranto-951781338/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/flakesss" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <a href="mailto:your-email@example.com" class="btn">Hubungi Saya!</a>
+        <a href="mailto:your-email@example.com" class="btn">Contact Me!</a>
     </section>
     
     <!-- Footer -->
@@ -136,7 +144,6 @@
         <p>&copy; 2024 Hatta Dwi Putranto. All rights reserved.</p>
     </footer>
     
-    <!-- JavaScript untuk menu responsif dan fitur tambahan -->
     <script src="script.js"></script>
 </body>
 </html>
