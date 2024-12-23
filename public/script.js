@@ -87,7 +87,7 @@ themeToggle.addEventListener('change', function() {
 });
 
 // Typewriter Effect with multiple phrases
-const roles = ["Web Development", "Data scientist", "Game Development"];
+const roles = ["Web Development", "AI and Big Data", "Game Development"];
 let roleIndex = 0;
 let charIndex = 0;
 let typingTextEl = document.getElementById('typing-text');
