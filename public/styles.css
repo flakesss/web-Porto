@@ -227,7 +227,7 @@ body {
     cursor: pointer;
 }
 
-/* Black border in light mode */
+/* Border hitam di mode terang */
 body:not(.dark-mode) .hero-img {
     border-color: black;
 }
@@ -414,6 +414,68 @@ body:not(.dark-mode) .hero-img {
     box-shadow: 0px 5px 20px rgba(0, 173, 181, 0.3);
 }
 
+/* Certificates Section */
+.certificates-container {
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.certificates-container h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.certificates-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.certificates-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.certificate-item {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Menunjukkan bahwa item dapat diklik */
+}
+
+.certificate-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 173, 181, 0.5);
+}
+
+.certificate-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.certificate-item h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.certificate-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* Contact Section */
 .contact-container {
     padding: 60px 20px;
@@ -440,7 +502,7 @@ body:not(.dark-mode) .hero-img {
     transition: transform 0.3s ease;
 }
 
-/* Black border for contact image in light mode */
+/* Border hitam untuk contact image di mode terang */
 body:not(.dark-mode) .img-contact {
     border-color: black;
 }
@@ -572,7 +634,7 @@ body:not(.dark-mode) .img-contact {
     }
 
     .hero-right {
-        text-align: center; /* Ensure symmetry on mobile */
+        text-align: center;
     }
 
     .hero-left, .hero-right {
