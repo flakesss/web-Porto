@@ -20,6 +20,8 @@
                     <li><a href="#hero" class="nav-link">Home</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <!-- Link baru untuk sertifikat -->
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 
@@ -41,12 +43,21 @@
     <section id="hero" class="hero-section">
         <div class="hero-inner">
             <div class="hero-left">
-                <img src="assets/1000090901 (1).jpg" alt="Profile Image" class="hero-img" onclick="openFullImage()">
+                <img src="assets/1000090901 (1).jpg" alt="Profile Image" class="hero-img" onclick="openFullImage(this.src)">
             </div>
             <div class="hero-right">
                 <h1>Hello, I am <span class="highlight">Hatta Dwi Putranto</span></h1>
                 <h2><span id="typing-text"></span><span class="typing-cursor">|</span></h2>
-                <p>I am an undergraduate student in Telecommunication Engineering at Telkom University. I am passionate about building interactive digital products, leveraging machine learning for intelligent solutions, and developing enjoyable games. Let's collaborate to create something extraordinary!</p>
+                <p>
+                    I am an undergraduate student in Telecommunication Engineering at Telkom University.
+                    I am passionate about building interactive digital products, 
+                    leveraging machine learning for intelligent solutions, and developing enjoyable games.
+                    Let's collaborate to create something extraordinary!
+                </p>
+                
+                <!-- Tombol Download CV -->
+                <!-- Pastikan file PDF Anda berada di folder 'public/assets' -->
+                <a href="assets/CV Hatta Dwi Putranto.pdf" class="btn download-cv-btn" download>Download CV</a>
             </div>
         </div>
     </section>
@@ -98,7 +109,6 @@
                     <a href="https://github.com/flakesss/face_Recognition" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <!-- No Demo link provided -->
                 </div>
             </div>
             <!-- Project 3: Maternal Health Risk -->
@@ -110,7 +120,7 @@
                     <a href="https://github.com/flakesss/web-MaternalRisk" target="_blank" class="btn github-btn">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="#" target="_blank" class="btn">Demo</a> <!-- Update Demo link if available -->
+                    <a href="#" target="_blank" class="btn">Demo</a>
                 </div>
             </div>
             <!-- Project 4: K-Drama Recommendations -->
@@ -120,24 +130,58 @@
                 <p>A recommendation system using machine learning to suggest K-Dramas based on ratings.</p>
                 <div class="project-buttons">
                     <a href="#" target="_blank" class="btn github-btn">
-                        <i class="fab fa-github"></i> GitHub <!-- Update GitHub link if available -->
+                        <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="#" target="_blank" class="btn">Demo</a> <!-- Update Demo link if available -->
+                    <a href="#" target="_blank" class="btn">Demo</a>
                 </div>
             </div>
         </div>
     </section>
     
+    <!-- Certificates Section (Bagian baru) -->
+    <section id="certificates" class="certificates-container">
+        <h2>Certificates</h2>
+        <p>Here are some of the certificates I've earned so far:</p>
+
+        <div class="certificates-content">
+            <!-- Contoh sertifikat 1 -->
+            <div class="certificate-item">
+                <img src="assets/E-Sertifikat - Hatta Dwi Putranto.jpg" alt="Certificate 1" onclick="openFullImage(this.src)">
+                <h3>Certificate of Participation in IGDX Career</h3>
+             </div>
+
+            <!-- Contoh sertifikat 2 -->
+            <div class="certificate-item">
+                <img src="assets/Hatta Dwi Putranto e serti advance.jpg" alt="Certificate 2" onclick="openFullImage(this.src)">
+                <h3>Certificate of Completion in Fundamental Ethical Hacking</h3>
+            </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="certificate-item">
+                <img src="assets/Hatta Dwi Putranto_e sertifikat.jpg" alt="Certificate 3" onclick="openFullImage(this.src)">
+                <h3>Certificate of Completion in Advanced Ethical Hacking</h3>
+            </div>
+
+            <!-- Sertifikat 4 -->
+            <div class="certificate-item">
+                <img src="assets/Hatta Dwi Putranto.png" alt="Certificate 4" onclick="openFullImage(this.src)">
+                <h3>Certificate of Completion in Image Processing</h3>
+            </div>
+
+            <!-- Tambahkan item sertifikat lain sesuai kebutuhan -->
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-container">
         <h2>Contact Me</h2>
-        <img src="assets/1000090901 (1).jpg" class="img-contact" alt="Contact Image" onclick="openFullImage()">
+        <img src="assets/1000090901 (1).jpg" class="img-contact" alt="Contact Image" onclick="openFullImage(this.src)">
         <div class="social-icons">
             <a href="https://www.instagram.com/httadw/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/hatta-dwi-putranto-951781338/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/flakesss" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <a href="mailto:your-email@example.com" class="btn">Contact Me!</a> <!-- Update email if necessary -->
+        <a href="mailto:your-email@example.com" class="btn">Contact Me!</a> <!-- Update email jika perlu -->
     </section>
     
     <!-- Footer -->
@@ -145,6 +189,7 @@
         <p>&copy; 2024 Hatta Dwi Putranto. All rights reserved.</p>
     </footer>
     
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
