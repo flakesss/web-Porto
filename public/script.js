@@ -23,12 +23,12 @@ if (hamburger && navMenu) {
 }
 
 // Full image overlay
-function openFullImage() {
+function openFullImage(src) {
     const overlay = document.createElement('div');
     overlay.id = 'image-overlay';
 
     const img = document.createElement('img');
-    img.src = 'assets/1000090901 (1).jpg';
+    img.src = src;
     img.classList.add('full-image');
 
     overlay.addEventListener('click', function() {
