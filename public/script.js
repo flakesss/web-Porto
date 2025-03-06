@@ -163,7 +163,7 @@ function setupDarkModeToggle() {
 
 // ====== ENHANCED TYPING EFFECT ======
 function enhancedTypingEffect() {
-    const roles = ["Web Developer", "AI Enthusiast", "Machine Learning Engineer", "Game Developer"];
+    const roles = ["Web Developer", "AI Enthusiast", "Machine Learning Enthusiast"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
