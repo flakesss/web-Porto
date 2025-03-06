@@ -659,18 +659,18 @@ body:not(.dark-mode) .img-contact {
     .nav-menu {
         position: fixed;
         top: 80px;
-        right: -280px; /* Hide it off-screen initially */
-        background-color: rgba(26, 32, 44, 0.95); /* Dark background with opacity */
-        width: 280px;
-        height: auto; /* Auto height instead of 100% */
-        max-height: 80vh; /* Maximum height */
+        right: -250px; /* Ukuran menu lebih kecil */
+        background-color: rgba(26, 32, 44, 0.95);
+        width: 250px; /* Mengurangi lebar menu */
+        height: auto;
+        max-height: 80vh;
         flex-direction: column;
         align-items: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border-radius: 15px;
+        transition: all 0.3s ease;
+        border-radius: 12px;
         margin: 10px;
-        padding: 20px 0;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        padding: 15px 0; /* Padding lebih kecil */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
         z-index: 998;
         overflow: hidden;
@@ -680,81 +680,67 @@ body:not(.dark-mode) .img-contact {
         right: 0;
     }
 
-    .nav-menu::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
+    .nav-menu li {
+        margin: 8px 0; /* Mengurangi jarak vertikal antar menu item */
         width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(0, 173, 181, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-        z-index: -1;
+        display: flex;
+        justify-content: center;
     }
 
     .nav-link {
-        font-size: 1.2rem;
-        margin: 12px 0;
-        width: 90%;
+        font-size: 1rem; /* Ukuran font lebih kecil */
+        width: 85%;
+        padding: 10px 15px; /* Padding lebih kecil */
+        border-radius: 8px;
         text-align: center;
-        padding: 14px 20px;
-        border-radius: 12px;
         color: #ffffff !important;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        margin: 2px 0; /* Margin lebih kecil */
     }
 
     .nav-link:hover, .nav-link.active {
         background-color: var(--primary-color);
-        transform: translateX(5px);
-        color: #ffffff !important;
-        box-shadow: 0 5px 15px rgba(0, 173, 181, 0.3);
+        transform: translateY(-2px); /* Animasi lebih halus */
+        box-shadow: 0 5px 10px rgba(0, 173, 181, 0.3);
     }
 
+    /* Hamburger Button */
     .hamburger {
+        width: 40px; /* Ukuran lebih kecil */
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
         border-radius: 50%;
         background-color: var(--primary-color);
-        color: var(--background-color);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        z-index: 999;
-    }
-
-    .hamburger:hover {
-        transform: rotate(90deg);
+        color: #ffffff;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        margin-left: 10px;
     }
 
     .hamburger i {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Ukuran icon lebih kecil */
     }
 
-    /* Menu opening animation */
-    .nav-menu li {
-        opacity: 0;
-        transform: translateX(20px);
-        transition: all 0.3s ease;
-        transition-delay: 0s;
+    .toggle-container {
+        margin-right: 10px;
     }
 
-    .nav-menu.active li {
-        opacity: 1;
-        transform: translateX(0);
+    /* Menu overlay */
+    .menu-overlay.active {
+        opacity: 0.7; /* Lebih transparan */
     }
     
-    /* Staggered animation for menu items */
-    .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
-    .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
-    .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
-    .nav-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+    /* Memperbaiki animasi menu item */
+    .nav-menu.active li:nth-child(1) { transition-delay: 0.05s; }
+    .nav-menu.active li:nth-child(2) { transition-delay: 0.1s; }
+    .nav-menu.active li:nth-child(3) { transition-delay: 0.15s; }
+    .nav-menu.active li:nth-child(4) { transition-delay: 0.2s; }
+    .nav-menu.active li:nth-child(5) { transition-delay: 0.25s; }
+
 
     /* Overlay when menu is active */
     .menu-overlay {
