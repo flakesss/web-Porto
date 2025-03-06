@@ -40,156 +40,165 @@
         </nav>
     </header>
     
-    <section id="hero" class="hero-section">
-        <div class="hero-inner">
-            <div class="hero-left">
-                <img src="assets/1000090901 (1).jpg" alt="Profile Image" class="hero-img" onclick="openFullImage(this.src)">
-            </div>
-            <div class="hero-right">
-                <h1>Hello, I am <span class="highlight">Hatta Dwi Putranto</span></h1>
-                <h2><span id="typing-text"></span><span class="typing-cursor">|</span></h2>
-                <p>
-                    I am an undergraduate student in Telecommunication Engineering at Telkom University.
-                    I am passionate about creating innovative digital products and leveraging machine learning
-                    and deep learning for intelligent solutions. My focus is on advancing AI technologies
-                    to solve real-world problems. Let's collaborate to create something extraordinary!
-                </p>
-                
-                <!-- Tombol Download CV -->
-                <!-- Pastikan file PDF Anda berada di folder 'public/assets' -->
-                <a href="assets/CV Hatta Dwi Putranto.pdf" class="btn download-cv-btn" download>Download CV</a>
+   <!-- Hero Section Improvements -->
+<section id="hero" class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-left reveal">
+            <img src="assets/1000090901 (1).jpg" alt="Profile Image" class="hero-img" onclick="openFullImage(this.src)">
+        </div>
+        <div class="hero-right">
+            <h1 class="reveal">Hello, I am <span class="highlight">Hatta Dwi Putranto</span></h1>
+            <h2 class="reveal"><span id="typing-text"></span><span class="typing-cursor">|</span></h2>
+            <p class="reveal">
+                I am an undergraduate student in Telecommunication Engineering at Telkom University.
+                I am passionate about creating innovative digital products and leveraging machine learning
+                and deep learning for intelligent solutions. My focus is on advancing AI technologies
+                to solve real-world problems. Let's collaborate to create something extraordinary!
+            </p>
+            
+            <!-- Enhanced Download CV Button -->
+            <a href="assets/CV Hatta Dwi Putranto.pdf" class="btn download-cv-btn reveal" download>Download CV</a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section Improvements -->
+<section id="skills" class="skills-container">
+    <div class="parallax-bg"></div>
+    <h2 class="reveal">Skills</h2>
+    <div class="skills-content">
+        <div class="skill-item reveal">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Proficient in HTML, CSS, JavaScript, and modern frameworks for building responsive websites.</p>
+            <!-- Progress bar will be added by JS -->
+        </div>
+        <div class="skill-item reveal">
+            <i class="fas fa-robot"></i>
+            <h3>Machine Learning & Deep Learning</h3>
+            <p>Expertise in developing AI solutions using machine learning and deep learning frameworks like TensorFlow and PyTorch.</p>
+            <!-- Progress bar will be added by JS -->
+        </div>
+        <div class="skill-item reveal">
+            <i class="fas fa-chart-line"></i>
+            <h3>Data Science</h3>
+            <p>Skilled in data analysis, visualization, and extracting insights from complex datasets to drive intelligent decisions.</p>
+            <!-- Progress bar will be added by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section Improvements -->
+<section id="projects" class="projects-container">
+    <div class="parallax-bg"></div>
+    <h2 class="reveal">My Projects</h2>
+    <div class="projects-content">
+        <!-- Project 1: Portfolio Website -->
+        <div class="project-item reveal">
+            <span class="project-badge">Web Dev</span>
+            <i class="fas fa-laptop-code project-icon"></i>
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio showcasing projects, skills, and contact information.</p>
+            <div class="project-buttons">
+                <a href="https://github.com/flakesss/web-Porto" target="_blank" class="btn github-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="#" target="_blank" class="btn">Demo</a>
             </div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-container">
-        <h2>Skills</h2>
-        <div class="skills-content">
-            <div class="skill-item">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Proficient in HTML, CSS, JavaScript, and modern frameworks for building responsive websites.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-robot"></i>
-                <h3>Machine Learning & Deep Learning</h3>
-                <p>Expertise in developing AI solutions using machine learning and deep learning frameworks like TensorFlow and PyTorch.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Science</h3>
-                <p>Skilled in data analysis, visualization, and extracting insights from complex datasets to drive intelligent decisions.</p>
+        <!-- Project 2: Face Recognition -->
+        <div class="project-item reveal">
+            <span class="project-badge">AI</span>
+            <i class="fas fa-user-friends project-icon"></i>
+            <h3>Face Recognition</h3>
+            <p>A real-time face detection project using Python & OpenCV.</p>
+            <div class="project-buttons">
+                <a href="https://github.com/flakesss/face_Recognition" target="_blank" class="btn github-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
-    </section>
-
-    
-    <!-- Projects Section -->
-    <section id="projects" class="projects-container">
-        <h2>My Projects</h2>
-        <div class="projects-content">
-            <!-- Project 1: Portfolio Website -->
-            <div class="project-item">
-                <i class="fas fa-laptop-code project-icon"></i>
-                <h3>Portfolio Website</h3>
-                <p>A personal portfolio showcasing projects, skills, and contact information.</p>
-                <div class="project-buttons">
-                    <a href="https://github.com/flakesss/web-Porto" target="_blank" class="btn github-btn">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="#" target="_blank" class="btn">Demo</a> <!-- Update Demo link if available -->
-                </div>
+        <!-- Project 3: Maternal Health Risk -->
+        <div class="project-item reveal">
+            <span class="project-badge">ML</span>
+            <i class="fas fa-heartbeat project-icon"></i>
+            <h3>Maternal Health Risk</h3>
+            <p>A machine learning-based website for predicting pregnancy risk levels with a user-friendly interface.</p>
+            <div class="project-buttons">
+                <a href="https://github.com/flakesss/web-MaternalRisk" target="_blank" class="btn github-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="#" target="_blank" class="btn">Demo</a>
             </div>
-            <!-- Project 2: Face Recognition -->
-            <div class="project-item">
-                <i class="fas fa-user-friends project-icon"></i>
-                <h3>Face Recognition</h3>
-                <p>A real-time face detection project using Python & OpenCV.</p>
-                <div class="project-buttons">
-                    <a href="https://github.com/flakesss/face_Recognition" target="_blank" class="btn github-btn">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-            <!-- Project 3: Maternal Health Risk -->
-            <div class="project-item">
-                <i class="fas fa-heartbeat project-icon"></i>
-                <h3>Maternal Health Risk</h3>
-                <p>A machine learning-based website for predicting pregnancy risk levels with a user-friendly interface.</p>
-                <div class="project-buttons">
-                    <a href="https://github.com/flakesss/web-MaternalRisk" target="_blank" class="btn github-btn">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="#" target="_blank" class="btn">Demo</a>
-                </div>
-            </div>
-            <!-- Project 4: K-Drama Recommendations -->
-            <div class="project-item">
-                <i class="fas fa-tv project-icon"></i>
-                <h3>K-Drama Recommendations</h3>
-                <p>A recommendation system using machine learning to suggest K-Dramas based on ratings.</p>
-                <div class="project-buttons">
-                    <a href="https://huggingface.co/spaces/httadw/kdrama-recommender" target="_blank" class="btn">Demo</a>
-                </div>
-            </div>
-            <!-- Project 5: Hattas Color -->
-            <div class="project-item">
-                <i class="fas fa-palette project-icon"></i>
-                <h3>Hatta's Color</h3>
-                <p>A machine learning-based project where I fine-tuned a BERT model to generate color palettes based on user prompts.</p>
-                <div class="project-buttons">
-                    <a href="https://huggingface.co/spaces/httadw/hatta-coloors" target="_blank" class="btn">Demo</a>
-                </div>
-            </div>  
         </div>
-    </section>
-    
-    <!-- Certificates Section (Bagian baru) -->
-    <section id="certificates" class="certificates-container">
-        <h2>Certificates</h2>
-        <p>Here are some of the certificates I've earned so far:</p>
-
-        <div class="certificates-content">
-            <!-- Contoh sertifikat 1 -->
-            <div class="certificate-item">
-                <img src="assets/E-Sertifikat - Hatta Dwi Putranto.jpg" alt="Certificate 1" onclick="openFullImage(this.src)">
-                <h3>Certificate of Participation in IGDX Career</h3>
-             </div>
-
-            <!-- Contoh sertifikat 2 -->
-            <div class="certificate-item">
-                <img src="assets/Hatta Dwi Putranto e serti advance.jpg" alt="Certificate 2" onclick="openFullImage(this.src)">
-                <h3>Certificate of Completion in Fundamental Ethical Hacking</h3>
+        <!-- Project 4: K-Drama Recommendations -->
+        <div class="project-item reveal">
+            <span class="project-badge">AI</span>
+            <i class="fas fa-tv project-icon"></i>
+            <h3>K-Drama Recommendations</h3>
+            <p>A recommendation system using machine learning to suggest K-Dramas based on ratings.</p>
+            <div class="project-buttons">
+                <a href="https://huggingface.co/spaces/httadw/kdrama-recommender" target="_blank" class="btn">Demo</a>
             </div>
-
-            <!-- Sertifikat 3 -->
-            <div class="certificate-item">
-                <img src="assets/Hatta Dwi Putranto_e sertifikat.jpg" alt="Certificate 3" onclick="openFullImage(this.src)">
-                <h3>Certificate of Completion in Advanced Ethical Hacking</h3>
-            </div>
-
-            <!-- Sertifikat 4 -->
-            <div class="certificate-item">
-                <img src="assets/Hatta Dwi Putranto.png" alt="Certificate 4" onclick="openFullImage(this.src)">
-                <h3>Certificate of Completion in Image Processing</h3>
-            </div>
-
-            <!-- Tambahkan item sertifikat lain sesuai kebutuhan -->
         </div>
-    </section>
+        <!-- Project 5: Hattas Color -->
+        <div class="project-item reveal">
+            <span class="project-badge">AI</span>
+            <i class="fas fa-palette project-icon"></i>
+            <h3>Hatta's Color</h3>
+            <p>A machine learning-based project where I fine-tuned a BERT model to generate color palettes based on user prompts.</p>
+            <div class="project-buttons">
+                <a href="https://huggingface.co/spaces/httadw/hatta-coloors" target="_blank" class="btn">Demo</a>
+            </div>
+        </div>  
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-container">
-        <h2>Contact Me</h2>
-        <img src="assets/1000090901 (1).jpg" class="img-contact" alt="Contact Image" onclick="openFullImage(this.src)">
-        <div class="social-icons">
-            <a href="https://www.instagram.com/httadw/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/hatta-dwi-putranto-951781338/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/flakesss" target="_blank"><i class="fab fa-github"></i></a>
+<!-- Certificates Section Improvements -->
+<section id="certificates" class="certificates-container">
+    <div class="parallax-bg"></div>
+    <h2 class="reveal">Certificates</h2>
+    <p class="reveal">Here are some of the certificates I've earned so far:</p>
+
+    <div class="certificates-content">
+        <!-- Certificate 1 -->
+        <div class="certificate-item reveal">
+            <img src="assets/E-Sertifikat - Hatta Dwi Putranto.jpg" alt="Certificate 1" onclick="openFullImage(this.src)">
+            <h3>Certificate of Participation in IGDX Career</h3>
         </div>
-        <a href="mailto:hattadp123@gmail.com" class="btn">Contact Me!</a> <!-- Update email jika perlu -->
-    </section>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-item reveal">
+            <img src="assets/Hatta Dwi Putranto e serti advance.jpg" alt="Certificate 2" onclick="openFullImage(this.src)">
+            <h3>Certificate of Completion in Fundamental Ethical Hacking</h3>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-item reveal">
+            <img src="assets/Hatta Dwi Putranto_e sertifikat.jpg" alt="Certificate 3" onclick="openFullImage(this.src)">
+            <h3>Certificate of Completion in Advanced Ethical Hacking</h3>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="certificate-item reveal">
+            <img src="assets/Hatta Dwi Putranto.png" alt="Certificate 4" onclick="openFullImage(this.src)">
+            <h3>Certificate of Completion in Image Processing</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section Improvements -->
+<section id="contact" class="contact-container">
+    <div class="parallax-bg"></div>
+    <h2 class="reveal">Contact Me</h2>
+    <img src="assets/1000090901 (1).jpg" class="img-contact reveal" alt="Contact Image" onclick="openFullImage(this.src)">
+    <div class="social-icons">
+        <a href="https://www.instagram.com/httadw/" target="_blank" class="reveal"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/hatta-dwi-putranto-951781338/" target="_blank" class="reveal"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/flakesss" target="_blank" class="reveal"><i class="fab fa-github"></i></a>
+    </div>
+    <a href="mailto:hattadp123@gmail.com" class="btn reveal">Contact Me!</a>
+</section>
     
     <!-- Footer -->
     <footer class="footer">
